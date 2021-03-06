@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# Contributing
 
-You can use the [editor on GitHub](https://github.com/jloads/contribution/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+We can use help in a bunch of areas and any help is appreciated. 
+Our [GitHub issues](https://github.com/jloads/jloads/issues) serve as a place for any discussion, whether it's bug reports, questions, project direction etc. As the project grows this policy may change.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Our [Discord server](https://discord.gg/) is open for help and more adhoc discussion. All activity on the Discord is still moderated and will be strictly enforced under the project's [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-### Markdown
+You have to sign the [contributor license agreement (CLA)](https://cla.softreck.com) before your pull request can be reviewed. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Getting Started
 
-```markdown
-Syntax highlighted code block
+Getting started with developing jLoads is as easy as three commands. You will need Node v12 or above.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+git clone https://github.com/jloads/jloads
+cd jloads
+./scripts/jloads --help
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+No dependency installation step is required as we check in our `node_modules` folder that contains only a copy of TypeScript and some definitions.
 
-### Jekyll Themes
+Refer to [Getting Started](https://docs.jloads.com/introduction/getting-started/) for more usage documentation.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jloads/contribution/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Testing
 
-### Support or Contact
+You can run the test suite with the following command:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```bash
+./scripts/jloads test
+```
+
+This will run all tests inside of any `__rtests__` directories.
+
+## Type Checking
+
+Run TypeScript with code emitting disabled to perform a full typecheck outside the editor.
+
+```bash
+node_modules/.bin/tsc --noEmit
+```
+
+## Developing on Windows
+
+You may run into errors when trying to run the jloads commands on Windows
+
+
+This is because the command uses shebangs to automatically invoke itself as a Node script. You can fix this in a couple of ways:
+
+- Use a terminal that supports shebangs on Windows such a Git Bash
+- Prefix any commands with `node` eg. `node scripts/jloads`
