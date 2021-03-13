@@ -1,5 +1,7 @@
 # Contributing
 
++ [js-func/npm-style-guide: Opinionated npm Style Guide​ for teams.](https://github.com/js-func/npm-style-guide)
+
 We can use help in a bunch of areas and any help is appreciated. 
 Our [GitHub issues](https://github.com/jloads/jloads/issues) serve as a place for any discussion, whether it's bug reports, questions, project direction etc. As the project grows this policy may change.
 
